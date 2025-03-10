@@ -1,0 +1,32 @@
+SQL Joins Cheat Sheet
+Understanding Different Types of SQL Joins
+Introduction
+SQL joins are used to combine rows from two or more tables based on a related column between them. Here, we will explain different types of joins and show the maximum and minimum rows each join will return, assuming there are 10 rows in each table.
+Types of SQL Joins
+1. INNER JOIN
+An INNER JOIN returns only the rows that have matching values in both tables.
+ 
+Max rows returned: 10 (if all rows in both tables match)
+Min rows returned: 0 (if no rows match)
+2. LEFT JOIN (LEFT OUTER JOIN)
+A LEFT JOIN returns all rows from the left table and the matched rows from the right table. If there is no match, the result is NULL from the right side.
+ 
+Max rows returned: 10 (all rows from left table, plus matching rows from the right)
+Min rows returned: 10 (if no rows match, left table rows are returned with NULLs)
+
+3. RIGHT JOIN (RIGHT OUTER JOIN)
+A RIGHT JOIN returns all rows from the right table and the matched rows from the left table. If there is no match, the result is NULL from the left side.
+ 
+Max rows returned: 10 (all rows from right table, plus matching rows from the left)
+Min rows returned: 10 (if no rows match, right table rows are returned with NULLs)
+4. FULL JOIN (FULL OUTER JOIN)
+A FULL JOIN returns all rows when there is a match in one of the tables. If there is no match, the result is NULL from the side where there is no match.
+ 
+Max rows returned: 20 (if no rows match, all rows from both tables are returned, each with NULLs from the other table)
+Min rows returned: 10 (if all rows match perfectly, only those rows are returned)
+5. FULL JOIN (FULL OUTER JOIN)
+A CROSS JOIN returns the Cartesian product of the two tables, meaning it will return all possible combinations of rows from the tables. If one table has 10 rows and the other has 10 rows, a CROSS JOIN will return 100 rows.
+  
+Max rows returned: 100 (if both tables have 10 rows each)
+Min rows returned: 100 (if both tables have 10 rows each)
+
